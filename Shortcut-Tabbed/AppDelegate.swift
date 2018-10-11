@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // Add a Dynamic shortcut item to the list, Dynamic: Not added in the pinfo.list but in code here
+        let oceanShortcut = UIMutableApplicationShortcutItem(type: "\(Bundle.main.bundleIdentifier).ocean", localizedTitle: "Ocean", localizedSubtitle: "My Dynamic item", icon: UIApplicationShortcutIcon.init(templateImageName: "OceanShort"), userInfo: nil)
+        application.shortcutItems = [oceanShortcut]
+        
         return true
     }
 
